@@ -1,5 +1,40 @@
 从https://github.com/jiang1027/electron-sample-apps.git fork过来，用于学习electron的使用。
 
+当前测试环境:
+
+- electron v34.3.0
+
+npm config list输出如下：
+
+```text
+; "builtin" config from C:\Users\ybjia\AppData\Roaming\npm\node_modules\npm\npmrc
+
+prefix = "C:\\Users\\ybjia\\AppData\\Roaming\\npm"
+
+; "user" config from C:\Users\ybjia\.npmrc
+
+https-proxy = "http://127.0.0.1:7897"
+proxy = "http://127.0.0.1:7897"
+registry = "https://registry.npmmirror.com"
+
+; node bin location = C:\Program Files\nodejs\node.exe
+; node version = v22.14.0
+; npm local prefix = C:\source\electron\electron-sample-apps\desktop-capture
+; npm version = 10.2.1
+; cwd = C:\source\electron\electron-sample-apps\desktop-capture
+; HOME = C:\Users\ybjia
+; Run `npm config ls -l` to show all defaults.
+```
+
+环境变量:
+
+```
+set ELECTRON_GET_USE_PROXY=1
+set GLOBAL_AGENT_HTTP_PROXY=http://127.0.0.1:7897
+set GLOBAL_AGENT_HTTPS_PROXY=http://127.0.0.1:7897
+```
+
+
 # Electron Sample Apps
 
 This repository contains Electron sample apps to illustrate the usage of
