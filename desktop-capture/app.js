@@ -12,15 +12,14 @@
 // limitations under the License.
 // Author: Dongseong Hwang (dongseong.hwang@intel.com)
 
-const {desktopCapturer} = require('electron');
-
 let desktopSharing = false;
 let localStream;
+let capturerSources = [];
 
 function refresh() {
-  $('select').imagepicker({
-    hide_select : true
-  });
+  // $('select').imagepicker({
+  //   hide_select : true
+  // });
 }
 
 function addSource(source) {
@@ -32,12 +31,12 @@ function addSource(source) {
   refresh();
 }
 
-function showSources() {
-  desktopCapturer.getSources({ types:['window', 'screen'] }).then(async sources => {
-    for (let source of sources) {
+async function showSources() {
+  const { capturer } = window;
+  capturerSources = await capturer.getSources({ types:['window', 'screen'] });
+  capturerSources.forEach(source => {
       console.log("Name: " + source.name);
       addSource(source);
-    }
   });
 }
 
@@ -99,7 +98,7 @@ function onAccessApproved(desktop_id) {
   }
 }
 
-$(document).ready(function() {
+$(function() {
   showSources();
   refresh();
 });

@@ -1,3 +1,5 @@
+从https://github.com/jiang1027/electron-sample-apps.git fork过来，用于学习electron的使用。
+
 # Electron Sample Apps
 
 This repository contains Electron sample apps to illustrate the usage of
